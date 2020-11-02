@@ -29,3 +29,10 @@ for (i in 1:15) {
 
 #bye plots :)
 dev.off()
+
+#Finding and visualizing correlation among individual test items.
+install.packages("corrplot")
+library(corrplot)
+res <- cor(OrdinalData, method = "pearson")
+corrplot(res, type = "upper", order = "hclust", 
+         tl.col = "black", tl.srt = 45, tl.cex = 0.5)
